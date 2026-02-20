@@ -65,9 +65,10 @@ This structure eliminates redundancy and improves data integrity.
 ## ⚙️ Project Implementation Steps
 
 ### ✅ Step 1: Create Database (DDL)
-
+```sql
 CREATE DATABASE sales_project;
 USE sales_project;
+```
 
 ---
 
@@ -115,30 +116,36 @@ Performed real-world business queries including:
 # 📈 Key Business Insights
 
 ## 💰 1️⃣ Total Sales Revenue
-
+```sql
 SELECT SUM(o.quantity * p.unit_price) AS total_sales
 FROM orders o
 JOIN products p ON o.product_id = p.product_id;
-
+```
+```html
 <p align="center">
   <img src="Screenshots/Total_Sales.png" width="700"/>
 </p>
+```
 
 ## 🛍️ 2️⃣ Sales by Category
 
+```sql
 SELECT 
     p.category,
     SUM(o.quantity * p.unit_price) AS category_sales
 FROM orders o
 JOIN products p ON o.product_id = p.product_id
 GROUP BY p.category;
-
+```
+```html
 <p align="center">
   <img src="Screenshots/Category_Sales.png" width="700"/>
 </p>
+```
 
 ## 👑 3️⃣ Top 5 Customers by Sales
 
+```sql
 SELECT 
     c.customer_name,
     SUM(o.quantity * p.unit_price) AS total_spent
@@ -148,23 +155,25 @@ JOIN products p ON o.product_id = p.product_id
 GROUP BY c.customer_name
 ORDER BY total_spent DESC
 LIMIT 5;
-
+```
+```html
 <p align="center">
   <img src="Screenshots/Top_Customers.png" width="700"/>
 </p>
+```
 
 ---
 
 ## 🧠 Advanced SQL Concepts Used
 
-✔️ DDL (CREATE DATABASE, CREATE TABLE)
-✔️ DML (INSERT, SELECT DISTINCT)
-✔️ DQL (SELECT, GROUP BY, ORDER BY, LIMIT)
-✔️ JOINS (INNER JOIN)
-✔️ Subqueries
-✔️ Views
-✔️ Indexing
-✔️ Stored Procedures
-✔️ Aggregation Functions (SUM, COUNT, AVG)
+- ✔️ DDL (`CREATE DATABASE`, `CREATE TABLE`)
+- ✔️ DML (`INSERT`, `SELECT DISTINCT`)
+- ✔️ DQL (`SELECT`, `GROUP BY`, `ORDER BY`, `LIMIT`)
+- ✔️ JOINS (INNER JOIN)
+- ✔️ Subqueries
+- ✔️ Views
+- ✔️ Indexing
+- ✔️ Stored Procedures
+- ✔️ Aggregation Functions (`SUM`, `COUNT`, `AVG`)
 
 
