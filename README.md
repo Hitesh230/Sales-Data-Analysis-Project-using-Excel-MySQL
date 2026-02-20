@@ -66,7 +66,6 @@ This structure eliminates redundancy and improves data integrity.
 
 ### ✅ Step 1: Create Database (DDL)
 
-```sql
 CREATE DATABASE sales_project;
 USE sales_project;
 
@@ -117,7 +116,6 @@ Performed real-world business queries including:
 
 ## 💰 1️⃣ Total Sales Revenue
 
-```sql
 SELECT SUM(o.quantity * p.unit_price) AS total_sales
 FROM orders o
 JOIN products p ON o.product_id = p.product_id;
